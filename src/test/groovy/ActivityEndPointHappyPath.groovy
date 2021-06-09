@@ -16,8 +16,6 @@ class ActivityEndPointHappyPath extends Specification {
                 headers: ["User-Agent": "StephenG453"],
                 requestContentType: 'application/json'
         )
-        System.out.println("data:\n" + response.data)
-        System.out.println("headers:\n" + response.headers)
         then:
         assert response.status == 200: 'could not retrieve events'
         assert response.contentType == 'application/json': 'invalid content type specified'
