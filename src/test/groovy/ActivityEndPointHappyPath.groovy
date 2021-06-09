@@ -1,6 +1,10 @@
 import groovyx.net.http.RESTClient
+import org.apache.http.params.HttpParams
 import spock.lang.Shared
 import spock.lang.Specification
+
+import org.apache.http.client.config.RequestConfig
+import org.apache.http.impl.client.HttpClients
 
 class ActivityEndPointHappyPath extends Specification {
 
@@ -8,6 +12,15 @@ class ActivityEndPointHappyPath extends Specification {
 
     def setupSpec() {
         client = new RESTClient('https://api.github.com/')
+
+        def TIMEOUT = 5000
+        def defaultRequestConfig = RequestConfig.custom()
+                .setConnectionRequestTimeout(TIMEOUT)
+                .setConnectTimeout(TIMEOUT)
+                .setSocketTimeout(TIMEOUT)
+                .build()
+
+        client.createClient(HttpClients.custom().setDefaultRequestConfig(defaultRequestConfig).build() as HttpParams)
     }
 
     def 'user can get events'() {
