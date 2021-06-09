@@ -6,7 +6,7 @@ import spock.lang.Specification
 import org.apache.http.client.config.RequestConfig
 import org.apache.http.impl.client.HttpClients
 
-class ActivityEndPointHappyPath extends Specification {
+class EventHappyPath extends Specification {
 
     @Shared def client
 
@@ -20,6 +20,7 @@ class ActivityEndPointHappyPath extends Specification {
                 .setSocketTimeout(TIMEOUT)
                 .build()
 
+        // didnt realize HttpParams had been deprecated since my last usage of this library.
         client.createClient(HttpClients.custom().setDefaultRequestConfig(defaultRequestConfig).build() as HttpParams)
     }
 
