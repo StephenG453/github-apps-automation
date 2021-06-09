@@ -23,6 +23,7 @@ class EventSadPath extends Specification {
         then:
         HttpResponseException e = thrown(HttpResponseException)
         assert e.response.status == 403: 'invalidly retrieved events while using incorrect header'
+        //can use Data Driven Testing to test multiple different incorrect headers for extensive coverage
     }
 
     def 'user cant get events with invalid header content type'() {
@@ -34,5 +35,6 @@ class EventSadPath extends Specification {
         then:
         HttpResponseException e = thrown(HttpResponseException)
         assert e.response.status == 415: 'invalidly retrieved events while using incorrect content type'
+        //can use Data Driven Testing to test multiple different incorrect content types for extensive coverage
     }
 }
