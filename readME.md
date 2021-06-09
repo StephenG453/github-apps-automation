@@ -1,6 +1,7 @@
 # Github public API automation 
 This is a quick project developed for backend automation of Github's public APIs that also contains a jenkinsFile
-for CI/CD integration.    
+for CI/CD integration.
+Only Read methods (GET) were implemented, no Create, Update, or Delete methods are implemented in this quick project
 
 ## Improvements
 1. Integrate Jenkins plugins (like Test Results Analyzer) for a simple reporting layout within your CI/CD pipeline
