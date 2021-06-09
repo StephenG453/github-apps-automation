@@ -6,7 +6,8 @@ Only Read methods (GET) were implemented, no Create, Update, or Delete methods a
 ## Improvements
 1. Integrate Jenkins plugins (like Test Results Analyzer) for a simple reporting layout within your CI/CD pipeline
 2. Massive automation coverage can be achieved by using Data-Driven-Testing. 
-3. More specific assertions of the GET response bodies, this what not done due to me not having enough time to get familiar with the expected data inside the JSON responses 
+3. More specific assertions of the GET response bodies, this what not done due to me not having enough time to get familiar with the expected data inside the JSON responses
+4. Replacement of the deprecated HttpParams class
 
 ### Project Setup in IntelliJ:
 1. Use IntelliJ 2018.X
